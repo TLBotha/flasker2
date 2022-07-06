@@ -1,22 +1,28 @@
-<h1>Hello World!</h1>
+{% extends 'base.html' %}
 
-<p>This is my first webpage !!!</p>
+{% block content %}
 
-<p>My name is {{ name }}</p>
+    <h1>Hello World!</h1>
 
-<p>{{ stuff|safe }}</p>
+    <p>This is my first webpage !!!</p>
 
-<h3>Favorite Pizza:</h3>
+    <p>My name is {{ name }}</p>
 
-{% for toppings in favorite_pizza %}
+    <p>{{ stuff|safe }}</p>
 
-    {% if toppings == 41 %}
-        {{ toppings + 100 }}</br>
-    {% else %}
-        {{ toppings }}</br>
-    {% endif %}
-{% endfor %}
+    <h3>Favorite Pizza:</h3>
 
-</br></br>
-{{favorite_pizza.0}}
-{{favorite_pizza.3 + 100}}
+    {% for toppings in favorite_pizza %}
+
+        {% if toppings == 41 %}
+            {{ toppings + 100 }}</br>
+        {% else %}
+            {{ toppings }}</br>
+        {% endif %}
+    {% endfor %}
+
+    </br></br>
+    {{favorite_pizza.0}}
+    {{favorite_pizza.3 + 100}}
+
+{% endblock%}
